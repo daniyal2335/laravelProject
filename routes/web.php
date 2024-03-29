@@ -23,3 +23,7 @@ Route::get('contact',function(){
     return view('contact');
 });
 Route::get('users',[MyController::class,'userData']);
+Route::get('register',function(){
+    return view('register');
+});
+Route::post('register',[MyController::class,'subData']);
