@@ -22,4 +22,14 @@ Route::get('about',function(){
 Route::get('contact',function(){
     return view('contact');
 });
-Route::get('users',[MyController::class,'userData']);
+Route::get('users',[MyControler::class,'userData']);
+
+Route::get('register',function(){
+    return view('insert');
+});
+
+Route::post('register',[MyController::class,'insertData']);
+Route::get('select2',[MyController::class,'selectData']);
+Route::get('edit/{id}',[MyController::class,'showData']);
+Route::post('edit/{id}',[MyController::class,'updateData']);
+Route::get('edit/{id}/delete',[MyController::class,'removeData']);
