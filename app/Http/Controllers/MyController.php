@@ -50,20 +50,8 @@ class MyController extends Controller
         
         return redirect('select2');
     }
-    public function removeData($dId){
-      Teacher::delete($dId);
-      return view('', compact('selectData'));
-      
-    }
-
-    public function subData(Request $request){
-        $userName=$request->userName;
-        $userEmail=$request->userEmail;
-        $userPass=$request->userPasword;
-        $userData=[$userName,$userEmail,$userPass];
-        return view ('select',compact('userData'));
-
+    public function removeData($uId){
+      Teacher::destroy($uId);
+        return view('');
     }
 }
-
-
